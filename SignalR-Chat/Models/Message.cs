@@ -13,14 +13,14 @@ namespace SignalR_Chat.Models
         [Required]
         public string Content { get; set; }
         public DateTime SentAt { get; set; }
-        public MessaageStatus Status { get; set; }
+        public MessageStatus Status { get; set; }
         [ForeignKey("SenderId")]
         public virtual User Sender { get; set; }
         [ForeignKey("ConversationId")]
         public virtual Conversation Conversation { get; set; }
     }
 
-    public enum MessaageStatus
+    public enum MessageStatus
     {
         Sent = 1,
         Delivered = 2, 
